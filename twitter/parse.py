@@ -57,7 +57,7 @@ for tweet_id in tweet_ids:
     current_tweet = convert_json_to_class(json_tweet, "tweet")
     current_tweet["user"] = current_user
     current_tweet["replying_to"] = None
-    current_tweet["platform"] = 'twitter'
+    current_tweet["platform"] = "twitter"
 
     replying_to_id = json_tweet["inReplyToTweetId"]
 

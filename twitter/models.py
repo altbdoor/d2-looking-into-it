@@ -8,6 +8,7 @@ from typing import Optional, TypedDict
 #     url: str
 #     imageUrl: str
 
+
 @dataclass
 class User:
     """ """
