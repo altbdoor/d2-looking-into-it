@@ -1,6 +1,12 @@
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, TypedDict
 
+
+# class User(TypedDict):
+#     username: str
+#     id: str
+#     url: str
+#     imageUrl: str
 
 @dataclass
 class User:

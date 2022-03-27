@@ -19,9 +19,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-python@v3.0.0
+      - uses: actions/setup-python@v3
 
-      - name: Setup Python
+      - name: Running Python scripts
         run: |
           export PYTHONUNBUFFERED=1
           pip install -r requirements.txt
@@ -33,7 +33,7 @@ jobs:
         with:
           ruby-version: 2.7
 
-      - name: Run rubygems
+      - name: Running rubygems scripts
         working-directory: website
         run: |
           bundle init

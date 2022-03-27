@@ -2,8 +2,8 @@
 <div class="tweet-card {% if include.indented == 1 %}tweet-card--indented{% endif %}">
     <img
         class="tweet-card__img"
-        src="{{ include.tweet.custom_user.profileImageUrl }}"
-        alt="{{ include.tweet.custom_user.username }}"
+        src="{{ include.tweet.user.imageUrl }}"
+        alt="{{ include.tweet.user.username }}"
         width="48"
         height="48"
     />
@@ -11,9 +11,9 @@
         <div>
             <a
                 rel="noopener noreferrer"
-                href="https://twitter.com/{{ include.tweet.custom_user.username }}"
+                href="{{ include.tweet.user.url }}"
             >
-                @{{ include.tweet.custom_user.username }}
+                @{{ include.tweet.user.username }}
             </a>
             &middot;
             <time

@@ -19,7 +19,7 @@
 
     {% for item in site.data.compiled %}
         <div class="card">
-            {% include tweet-card.html tweet=item.custom_replying_to %}
+            {% include tweet-card.html tweet=item.replying_to %}
             <hr class="card__separator">
             {% include tweet-card.html tweet=item bigText=1 indented=1 %}
         </div>
