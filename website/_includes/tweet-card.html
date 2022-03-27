@@ -1,0 +1,38 @@
+{% if include.tweet %}
+<div class="tweet-card {% if include.indented == 1 %}tweet-card--indented{% endif %}">
+    <img
+        class="tweet-card__img"
+        src="{{ include.tweet.custom_user.profileImageUrl }}"
+        alt="{{ include.tweet.custom_user.username }}"
+        width="48"
+        height="48"
+    />
+    <div class="tweet-card__details">
+        <div>
+            <a
+                rel="noopener noreferrer"
+                href="https://twitter.com/{{ include.tweet.custom_user.username }}"
+            >
+                @{{ include.tweet.custom_user.username }}
+            </a>
+            &middot;
+            <time
+                datetime="{{ include.tweet.date }}"
+                title="{{ include.tweet.date }}"
+            >{{ include.tweet.date }}</time>
+            &middot;
+            <a rel="noopener noreferrer" href="{{ include.tweet.url }}">Open tweet</a>
+        </div>
+
+        {% if include.bigText == 1 %}
+            <h3 class="tweet-card__details__text">{{ include.tweet.content }}</h3>
+        {% else %}
+            <p class="tweet-card__details__text">{{ include.tweet.content }}</p>
+        {% endif %}
+    </div>
+</div>
+{% else %}
+<div>
+    <i>Tweet cannot be found.</i>
+</div>
+{% endif %}

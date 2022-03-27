@@ -1,0 +1,37 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d2-looking-into-it</title>
+
+    <link rel="icon" href="./assets/favicon.png">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body class="no-js">
+    <h1>d2-looking-into-it</h1>
+    <p>Are they looking into it? 👀</p>
+    <hr>
+
+    {% for item in site.data.compiled %}
+        <div class="card">
+            {% include tweet-card.html tweet=item.custom_replying_to %}
+            <hr class="card__separator">
+            {% include tweet-card.html tweet=item bigText=1 indented=1 %}
+        </div>
+    {% endfor %}
+    <hr>
+
+    <a rel="noopener noreferrer" href="https://github.com/altbdoor/d2-looking-into-it">GitHub</a>
+    &middot;
+    <a rel="noopener noreferrer" href="https://github.com/JustAnotherArchivist/snscrape">snscrape</a>
+    &middot;
+    <a rel="noopener noreferrer" href="https://watercss.kognise.dev/">water.css</a>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>

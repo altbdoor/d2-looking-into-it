@@ -63,4 +63,4 @@ for tweet_id in tweet_ids:
     processed_tweets.append(asdict(current_tweet))
 
 with open("tweets/compiled.json", "w", encoding="utf-8") as fp:
-    json.dump(processed_tweets, fp)
+    json.dump(processed_tweets, fp, ensure_ascii=False)
