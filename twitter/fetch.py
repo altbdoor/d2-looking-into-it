@@ -43,7 +43,10 @@ for i, data in enumerate(
     print(f">> processing ID {tweet.id}")
 
     tweet_ids.append(tweet.id)
-    reply_ids.append(tweet.inReplyToTweetId)
+    if tweet.inReplyToTweetId:
+        reply_ids.append(tweet.inReplyToTweetId)
+    else:
+        print(f">> no reply on ID {tweet.id}")
 
     fp = open(f"tweets/{tweet.id}.json", "w", encoding="utf-8")
     fp.write(tweet.json())
@@ -65,4 +68,4 @@ for reply_id in reply_ids:
         with open(f"tweets/{tweet.id}.json", "w", encoding="utf-8") as fp:
             fp.write(tweet.json())
     except ScraperException as err:
-        print(f">> failure on ID:{reply_id}")
+        print(f">> failure on ID {reply_id}")
