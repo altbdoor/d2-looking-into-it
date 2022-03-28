@@ -67,5 +67,5 @@ for reply_id in reply_ids:
 
         with open(f"tweets/{tweet.id}.json", "w", encoding="utf-8") as fp:
             fp.write(tweet.json())
-    except ScraperException as err:
+    except (ScraperException, KeyError) as err:
         print(f">> failure on ID {reply_id}")
