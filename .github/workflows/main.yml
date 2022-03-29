@@ -27,7 +27,9 @@ jobs:
           pip install -r requirements.txt
           python twitter/fetch.py
           python twitter/parse.py
-          cp twitter/tweets/compiled.json website/_data/
+          python reddit/fetch.py
+          python reddit/parse.py
+          python compile.py
 
       - uses: ruby/setup-ruby@v1
         with:
