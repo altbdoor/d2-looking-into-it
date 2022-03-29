@@ -1,5 +1,9 @@
 @import url('https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css');
 
+body {
+    padding-bottom: 4rem;
+}
+
 .card {
     border: 1px solid var(--border);
     padding: 1rem;
@@ -33,6 +37,11 @@
 }
 
 .tweet-card__details__text {
+    margin: 0.5rem 0 0;
+    white-space: pre-wrap;
+}
+
+.reddit-card__details__text {
     margin: 0.5rem 0 0;
     white-space: pre-wrap;
 }

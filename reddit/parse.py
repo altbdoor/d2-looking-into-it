@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import json
-from os import chdir, path
 from datetime import datetime
+from os import chdir, path
 from typing import Any
 
 chdir(path.dirname(__file__))

@@ -1,0 +1,31 @@
+{% if include.reddit %}
+<div class="reddit-card {% if include.indented == 1 %}tweet-card--indented{% endif %}">
+    <div>
+        <a
+            rel="noopener noreferrer"
+            href="{{ include.reddit.user.url }}"
+        >
+            /u/{{ include.reddit.user.username }}
+        </a>
+        &middot;
+        <time
+            datetime="{{ include.reddit.date }}"
+            title="{{ include.reddit.date }}"
+        >{{ include.reddit.date }}</time>
+        &middot;
+        <a rel="noopener noreferrer" href="{{ include.reddit.url }}">Open Reddit post</a>
+    </div>
+
+    <div class="reddit-card__details">
+        {% if include.bigText == 1 %}
+            <h3 class="reddit-card__details__text">{{ include.reddit.content }}</h3>
+        {% else %}
+            <p class="reddit-card__details__text">{{ include.reddit.content }}</p>
+        {% endif %}
+    </div>
+</div>
+{% else %}
+<div>
+    <i>Reddit post cannot be found.</i>
+</div>
+{% endif %}

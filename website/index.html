@@ -15,13 +15,24 @@
 <body class="no-js">
     <h1>d2-looking-into-it</h1>
     <p>Are they looking into it? 👀</p>
+    <p>
+        Last updated:
+        {% assign today_iso = site.time | date_to_xmlschema %}
+        <time datetime="{{ today_iso }}">{{ today_iso }}</time>
+    </p>
     <hr>
 
     {% for item in site.data.compiled %}
         <div class="card">
-            {% include tweet-card.html tweet=item.replying_to %}
-            <hr class="card__separator">
-            {% include tweet-card.html tweet=item bigText=1 indented=1 %}
+            {% if item.platform == 'twitter' %}
+                {% include tweet-card.html tweet=item.replying_to %}
+                <hr class="card__separator">
+                {% include tweet-card.html tweet=item bigText=1 indented=1 %}
+            {% else %}
+                {% include reddit-card.html reddit=item.replying_to %}
+                <hr class="card__separator">
+                {% include reddit-card.html reddit=item bigText=1 indented=1 %}
+            {% endif %}
         </div>
     {% endfor %}
     <hr>
