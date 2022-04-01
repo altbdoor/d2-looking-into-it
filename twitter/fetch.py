@@ -12,6 +12,8 @@ queries = (
     "aware",
     "looking into it",
     "look into it",
+    "looking into this",
+    "look into this",
 )
 
 persons = (
