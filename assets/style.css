@@ -1,0 +1,47 @@
+@import url('https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css');
+
+body {
+    padding-bottom: 4rem;
+}
+
+.card {
+    border: 1px solid var(--border);
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+}
+.card:nth-child(2n+1) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card__separator {
+    margin: 1rem 0;
+}
+
+.tweet-card {
+    display: flex;
+    align-items: flex-start;
+}
+.tweet-card--indented {
+    padding-left: 1rem;
+    border-left: 0.25rem solid var(--border);
+}
+
+.tweet-card__img {
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.tweet-card__details {
+    flex: 1;
+}
+
+.tweet-card__details__text {
+    margin: 0.5rem 0 0;
+    white-space: pre-wrap;
+}
+
+.reddit-card__details__text {
+    margin: 0.5rem 0 0;
+    white-space: pre-wrap;
+}
